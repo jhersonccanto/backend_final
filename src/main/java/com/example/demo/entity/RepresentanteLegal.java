@@ -36,8 +36,10 @@ public class RepresentanteLegal {
 	@Column(name="cargo")
 private String cargo;
 	
-	@Column(name="estado")
-private String estado;
+	@ManyToOne
+	@JoinColumn(name = "id_estado", nullable = false)
+	private EstadoPPP estadoPPP;
+	
 	
 	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "representante_legal")
 	@JsonIgnore

@@ -45,9 +45,6 @@ private String password;
 	@Column(name="email")
 	private String email;
 	
-	@Column(name="estado")
-	private String estado;
-	
 	
 	@ManyToOne
 	@JoinColumn(name = "id_persona", nullable = false)
@@ -56,6 +53,9 @@ private String password;
 	
 	
 	
+	@ManyToOne
+	@JoinColumn(name = "id_estado", nullable = false)
+	private EstadoPPP estadoPPP;
 		
 	
 	@OneToMany(mappedBy = "usuario_recibe", cascade = CascadeType.ALL, fetch = FetchType.LAZY)

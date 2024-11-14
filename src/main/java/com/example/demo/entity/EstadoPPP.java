@@ -42,7 +42,13 @@ private String estado;
 	@JsonIgnore
 	private Set<Practica> plan_practica;
 	
+	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "estadoPPP")
+	@JsonIgnore
+	private Set<Linea> linea;
 	
+	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "estadoPPP")
+	@JsonIgnore
+	private Set<RepresentanteLegal> representante_legal;
 	
 	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "estadoPPP")
 	@JsonIgnore
@@ -63,4 +69,17 @@ private String estado;
 	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "estadoPPP")
 	@JsonIgnore
 	private Set<Plan> plan;
+	
+	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "estadoPPP")
+	@JsonIgnore
+	private Set<Rol> rol;
+	
+	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "estadoPPP")
+	@JsonIgnore
+	private Set<Supervisor> supervisor;
+	
+	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "estadoPPP")
+	@JsonIgnore
+	private Set<Usuario> usuario;
+
 }

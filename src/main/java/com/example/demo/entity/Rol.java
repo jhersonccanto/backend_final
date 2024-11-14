@@ -12,7 +12,9 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -36,8 +38,6 @@ public class Rol {
 	@Column(name="nombre")
 private String nombre;
 	
-	@Column(name="estado")
-private String estado;
 	
 	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "rol")
 	@JsonIgnore
@@ -47,6 +47,12 @@ private String estado;
 	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "rol")
 	@JsonIgnore
 	private Set<UsuarioRol> usuario_rol;
+	
+	
+	@ManyToOne
+	@JoinColumn(name = "id_estado", nullable = false)
+	private EstadoPPP estadoPPP;
+	
 	
 	
 	@OneToMany(mappedBy = "rol_emisor", cascade = CascadeType.ALL, fetch = FetchType.LAZY)

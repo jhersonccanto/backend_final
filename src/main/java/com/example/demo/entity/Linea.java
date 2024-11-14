@@ -11,6 +11,8 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -34,9 +36,10 @@ public class Linea {
 	@Column(name="nombre")
 private String nombre;
 	
-	@Column(name="estado")
-private Number estado;
-
+	@ManyToOne
+	@JoinColumn(name = "id_estado", nullable = false)
+	private EstadoPPP estadoPPP;
+	
 	
 	
 	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "linea")
