@@ -27,39 +27,39 @@ import lombok.Setter;
 @Entity
 @Table(name="empresa")
 public class Empresa {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	
-	@Column(name="id_empresa")
-	private Long id_empresa;
-	
-	@Column(name="nombre")
-private String nombre;
-	
-	@Column(name="ruc")
-private String ruc;
-	
-	@Column(name="correo")
-private String correo;
-	
-	@Column(name="telefono")
-private String telefono;
-	
-	@Column(name="direccion")
-private String direccion;
-	
-	@ManyToOne
-	@JoinColumn(name = "id_representante", nullable = false)
-	private RepresentanteLegal representante_legal;
-	
-	@ManyToOne
-	@JoinColumn(name = "id_estado", nullable = false)
-	private EstadoPPP estadoPPP;
-	
-	
-	@ManyToOne
-	@JoinColumn(name = "id_ubigeo", nullable = false)
-	private Ubigeo ubigeo;
-	
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name="id_empresa")
+    private Long idEmpresa;
 
+    @Column(name="nombre", nullable = false)
+    private String nombre;
+
+    @Column(name="ruc", nullable = false)
+    private String ruc;
+
+    @Column(name="correo", nullable = false)
+    private String correo;
+
+    @Column(name="telefono", nullable = false)
+    private String telefono;
+
+    @Column(name="direccion", nullable = false)
+    private String direccion;
+
+    @ManyToOne
+    @JoinColumn(name = "id_representante", nullable = false)
+    private RepresentanteLegal representante_legal;
+
+    @ManyToOne
+    @JoinColumn(name = "id_estado", nullable = false)
+    private EstadoPPP estado_ppp;
+
+    @ManyToOne
+    @JoinColumn(name = "id_ubigeo", nullable = false)
+    private Ubigeo ubigeo;
+
+    @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "empresa")
+    @JsonIgnore
+    private Set<Practica> practica;
 }

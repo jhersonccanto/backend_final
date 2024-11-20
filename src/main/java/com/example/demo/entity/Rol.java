@@ -27,39 +27,35 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity
-@Table(name="rol")
+@Table(name = "rol")
 public class Rol {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	
-	@Column(name="id_rol")
-	private Long id_rol;
-	
-	@Column(name="nombre")
-private String nombre;
-	
-	
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "rol")
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_rol")
+    private Long idRol;
+
+    @Column(name = "nombre")
+    private String nombre;
+    
+    @ManyToOne
+    @JoinColumn(name = "id_estado", nullable = false)
+    private EstadoPPP estado_ppp;
+
+    @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "rol")
 	@JsonIgnore
 	private Set<RolAcceso> rol_acceso;
-	
-
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "rol")
-	@JsonIgnore
-	private Set<UsuarioRol> usuario_rol;
-	
-	
-	@ManyToOne
-	@JoinColumn(name = "id_estado", nullable = false)
-	private EstadoPPP estadoPPP;
-	
-	
-	
-	@OneToMany(mappedBy = "rol_emisor", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    
+    @OneToMany(mappedBy = "rol_emisor", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore
     private Set<TipoDocumento> documento_emisor = new HashSet<>();
 	
 	@OneToMany(mappedBy = "rol_receptor", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JsonIgnore
     private Set<TipoDocumento> documento_receptor = new HashSet<>();
-	
-	
+
+	@ManyToMany(mappedBy = "rol")
+	private Set<Usuario> usuario = new HashSet<>();
+
+    
 }

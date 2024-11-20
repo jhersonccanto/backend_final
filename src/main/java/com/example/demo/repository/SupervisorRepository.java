@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.entity.Supervisor;
 
 @Repository
-public interface SupervisorRepository extends JpaRepository<Supervisor, Long>{
+public interface SupervisorRepository extends JpaRepository<Supervisor, Long> {
 
 }

@@ -8,15 +8,14 @@ import org.springframework.stereotype.Component;
 
 import com.example.demo.dao.EvaluacionAcademicaDao;
 import com.example.demo.entity.EvaluacionAcademica;
-import com.example.demo.entity.Plan;
 import com.example.demo.repository.EvaluacionAcademicaRepository;
 
 @Component
-public class EvaluacionAcademicaDaoImpl implements EvaluacionAcademicaDao{
+public class EvaluacionAcademicaDaoImpl implements EvaluacionAcademicaDao {
 
 	@Autowired
 	private EvaluacionAcademicaRepository evaluacionacademicarepository;
-	
+
 	@Override
 	public EvaluacionAcademica create(EvaluacionAcademica a) {
 		// TODO Auto-generated method stub

@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import jakarta.validation.Valid;
+
 import com.example.demo.entity.Practica;
 import com.example.demo.service.PracticaService;
 
@@ -18,6 +19,18 @@ public class PracticaController {
     @Autowired
     private PracticaService service;
 
+    /*private final PlanPracticaRepository practicaRepository;
+
+    public PracticaController(PlanPracticaRepository practicaRepository) {
+        this.practicaRepository = practicaRepository;
+    }
+
+    @GetMapping
+    public ResponseEntity<List<SolicitudDTO>> getSolicitudes() {
+        List<SolicitudDTO> solicitudes = practicaRepository.findAllSolicitudes();
+        return solicitudes.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(solicitudes);
+    }*/
+    
     @GetMapping
     public ResponseEntity<List<Practica>> readAll() {
         List<Practica> lista = service.readAll();

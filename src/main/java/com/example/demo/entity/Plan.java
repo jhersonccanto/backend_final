@@ -25,22 +25,22 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity
-@Table(name="plan")
+@Table(name = "plan")
 public class Plan {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	
-	@Column(name="id_plan")
-	private Long id_plan;
-	
-	@Column(name="plan")
-private String plan;
-	
-	@ManyToOne
-	@JoinColumn(name = "id_estado", nullable = false)
-	private EstadoPPP estadoPPP;
-	
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "plan")
-	@JsonIgnore
-	private Set<PlanCarrera> plan_carrera;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_plan")
+    private Long idPlan;
+
+    @Column(name = "plan", nullable = false)
+    private String plan;
+
+    @ManyToOne
+    @JoinColumn(name = "id_estado", nullable = false)
+    private EstadoPPP estado_ppp;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "plan")
+    @JsonIgnore
+    private Set<PlanCarrera> plan_carrera;
 }

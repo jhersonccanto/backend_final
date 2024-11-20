@@ -3,7 +3,6 @@ package com.example.demo.entity;
 import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -25,24 +24,22 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity
-@Table(name="linea")
+@Table(name = "linea")
 public class Linea {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	
-	@Column(name="id_linea")
-	private Long id_linea;
-	
-	@Column(name="nombre")
-private String nombre;
-	
-	@ManyToOne
-	@JoinColumn(name = "id_estado", nullable = false)
-	private EstadoPPP estadoPPP;
-	
-	
-	
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "linea")
-	@JsonIgnore
-	private Set<Practica> practica;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_linea")
+    private Long idLinea;
+
+    @Column(name = "nombre", nullable = false)
+    private String nombre;
+
+    @ManyToOne
+    @JoinColumn(name = "id_estado", nullable = false)
+    private EstadoPPP estado_ppp;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "linea")
+    @JsonIgnore
+    private Set<Practica> practica;
 }

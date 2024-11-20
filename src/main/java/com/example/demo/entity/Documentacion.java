@@ -1,7 +1,6 @@
 package com.example.demo.entity;
 
 import java.time.LocalDate;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Column;
@@ -24,36 +23,34 @@ import lombok.Setter;
 @Entity
 @Table(name="documentacion")
 public class Documentacion {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	
-	@Column(name="id_documentacion")
-	private Long id_documentacion;
-	
-	@Column(name="nombre")
-private String nombre;
-	
-	@Column(name="url")
-	private String url;
-	
-	@Column(name="fecha_creacion")
-	@JsonFormat(pattern = "yyyy-MM-dd")
-	private LocalDate fecha_creacion;
-	
-	@Column(name="fecha_subida")
-	@JsonFormat(pattern = "yyyy-MM-dd")
-	private LocalDate fecha_subida;
-	
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name="id_documentacion")
+    private Long idDocumentacion;
 
-	@ManyToOne
-	@JoinColumn(name = "id_estado", nullable = false)
-	private EstadoPPP estadoPPP;
-	
-	@ManyToOne
-	@JoinColumn(name = "id_practica", nullable = false)
-	private Practica 	practica;
-	
-	@ManyToOne
-	@JoinColumn(name = "id_tipo_documento", nullable = false)
-	private TipoDocumento tipo_documento;
+    @Column(name="nombre")
+    private String nombre;
+
+    @Column(name="url")
+    private String url;
+
+    @Column(name="fecha_creacion")
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDate fechaCreacion;
+
+    @Column(name="fecha_subida")
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDate fechaSubida;
+
+    @ManyToOne
+    @JoinColumn(name = "id_estado", nullable = false)
+    private EstadoPPP estado_ppp;
+
+    @ManyToOne
+    @JoinColumn(name = "id_practica", nullable = false)
+    private Practica practica;
+
+    @ManyToOne
+    @JoinColumn(name = "id_tipo_documento", nullable = false)
+    private TipoDocumento tipo_documento;
 }

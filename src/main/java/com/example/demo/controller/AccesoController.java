@@ -24,65 +24,65 @@ import com.example.demo.service.AccesoService;
 @RequestMapping("/api/acceso")
 @CrossOrigin(origins = "http://localhost:4200")
 public class AccesoController {
-	  @Autowired
-	    private AccesoService service;
+	@Autowired
+	private AccesoService service;
 
-	    @GetMapping
-	    public ResponseEntity<List<Acceso>> readAll() {
-	        try {
-	            List<Acceso> lista = service.readAll();
-	            if (lista.isEmpty()) {
-	                return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
-	            } else {
-	                return new ResponseEntity<>(lista, HttpStatus.OK);
-	            }
-	        } catch (Exception e) {
-	            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-	        }
-	    }
+	@GetMapping
+	public ResponseEntity<List<Acceso>> readAll() {
+		try {
+			List<Acceso> lista = service.readAll();
+			if (lista.isEmpty()) {
+				return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
+			} else {
+				return new ResponseEntity<>(lista, HttpStatus.OK);
+			}
+		} catch (Exception e) {
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
 
-	    @PostMapping
-	    public ResponseEntity<Acceso> create(@Valid @RequestBody Acceso obj) {
-	        try {
-	            Acceso objeto = service.create(obj);
-	            return new ResponseEntity<>(objeto, HttpStatus.CREATED);
-	        } catch (Exception e) {
-	            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-	        }
-	    }
+	@PostMapping
+	public ResponseEntity<Acceso> create(@Valid @RequestBody Acceso obj) {
+		try {
+			Acceso objeto = service.create(obj);
+			return new ResponseEntity<>(objeto, HttpStatus.CREATED);
+		} catch (Exception e) {
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
 
-	    @GetMapping("/{id}")
-	    public ResponseEntity<Acceso> getAccesoById(@PathVariable Long id) {
-	        try {
-	            Acceso objeto = service.read(id).orElse(null);
-	            if (objeto != null) {
-	                return new ResponseEntity<>(objeto, HttpStatus.OK);
-	            } else {
-	                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-	            }
-	        } catch (Exception e) {
-	            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-	        }
-	    }
+	@GetMapping("/{id}")
+	public ResponseEntity<Acceso> getAccesoById(@PathVariable Long id) {
+		try {
+			Acceso objeto = service.read(id).orElse(null);
+			if (objeto != null) {
+				return new ResponseEntity<>(objeto, HttpStatus.OK);
+			} else {
+				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+			}
+		} catch (Exception e) {
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
 
-	    @DeleteMapping("/{id}")
-	    public ResponseEntity<Void> deleteAcceso(@PathVariable Long id) {
-	        try {
-	            service.delete(id);
-	            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-	        } catch (Exception e) {
-	            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-	        }
-	    }
+	@DeleteMapping("/{id}")
+	public ResponseEntity<Void> deleteAcceso(@PathVariable Long id) {
+		try {
+			service.delete(id);
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		} catch (Exception e) {
+			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
 
-	    @PutMapping("/{id}")
-	    public ResponseEntity<Acceso> updateAcceso(@PathVariable Long id, @Valid @RequestBody Acceso obj) {
-	        Optional<Acceso> objeto = service.read(id);
-	        if (objeto.isPresent()) {
-	            Acceso actualizado = service.update(obj);
-	            return new ResponseEntity<>(actualizado, HttpStatus.OK);
-	        } else {
-	            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-	        }
-	    }
+	@PutMapping("/{id}")
+	public ResponseEntity<Acceso> updateAcceso(@PathVariable Long id, @Valid @RequestBody Acceso obj) {
+		Optional<Acceso> objeto = service.read(id);
+		if (objeto.isPresent()) {
+			Acceso actualizado = service.update(obj);
+			return new ResponseEntity<>(actualizado, HttpStatus.OK);
+		} else {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+	}
 }

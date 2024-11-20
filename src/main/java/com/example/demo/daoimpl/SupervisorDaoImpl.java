@@ -7,16 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.example.demo.dao.SupervisorDao;
-import com.example.demo.entity.Plan;
 import com.example.demo.entity.Supervisor;
 import com.example.demo.repository.SupervisorRepository;
 
 @Component
-public class SupervisorDaoImpl implements SupervisorDao{
+public class SupervisorDaoImpl implements SupervisorDao {
 
 	@Autowired
 	private SupervisorRepository supervisorrepository;
-	
+
 	@Override
 	public Supervisor create(Supervisor a) {
 		// TODO Auto-generated method stub

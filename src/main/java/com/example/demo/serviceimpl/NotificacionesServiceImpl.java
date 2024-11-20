@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.NotificacionesDao;
 import com.example.demo.entity.Notificaciones;
-import com.example.demo.entity.PlanCarrera;
 import com.example.demo.service.NotificacionesService;
 
 @Service

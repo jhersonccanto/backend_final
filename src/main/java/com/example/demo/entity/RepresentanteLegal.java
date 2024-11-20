@@ -25,28 +25,26 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity
-@Table(name="representante_legal")
+@Table(name = "representante_legal")
 public class RepresentanteLegal {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	
-	@Column(name="id_representante")
-	private Long id_representante;
-	
-	@Column(name="cargo")
-private String cargo;
-	
-	@ManyToOne
-	@JoinColumn(name = "id_estado", nullable = false)
-	private EstadoPPP estadoPPP;
-	
-	
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "representante_legal")
-	@JsonIgnore
-	private Set<Empresa> empresa;
-	
-	@ManyToOne
-	@JoinColumn(name = "id_persona", nullable = false)
-	private Persona persona;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_representante")
+    private Long idRepresentante;
+
+    @Column(name = "cargo")
+    private String cargo;
+
+    @ManyToOne
+    @JoinColumn(name = "id_estado", nullable = false)
+    private EstadoPPP estado_ppp;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "representante_legal")
+    @JsonIgnore
+    private Set<Empresa> empresa;
+
+    @ManyToOne
+    @JoinColumn(name = "id_persona", nullable = false)
+    private Persona persona;
 }

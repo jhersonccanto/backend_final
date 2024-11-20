@@ -7,16 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.example.demo.dao.PracticanteDao;
-import com.example.demo.entity.Plan;
 import com.example.demo.entity.Practicante;
 import com.example.demo.repository.PracticanteRepository;
 
 @Component
-public class PracticanteDaoImpl implements PracticanteDao{
+public class PracticanteDaoImpl implements PracticanteDao {
 
 	@Autowired
 	private PracticanteRepository practicanterepository;
-	
+
 	@Override
 	public Practicante create(Practicante a) {
 		// TODO Auto-generated method stub

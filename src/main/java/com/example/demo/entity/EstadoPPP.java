@@ -23,63 +23,58 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity
-@Table(name="estado_ppp")
+@Table(name = "estado_ppp")
 public class EstadoPPP {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	
-	@Column(name="id_estado")
-	private Long id_estado;
-	
-	@Column(name="estado")
-private String estado;
-	
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "estadoPPP")
-	@JsonIgnore
-	private Set<Empresa> empresa;
-	
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "estadoPPP")
-	@JsonIgnore
-	private Set<Practica> plan_practica;
-	
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "estadoPPP")
-	@JsonIgnore
-	private Set<Linea> linea;
-	
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "estadoPPP")
-	@JsonIgnore
-	private Set<RepresentanteLegal> representante_legal;
-	
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "estadoPPP")
-	@JsonIgnore
-	private Set<Practicante> practicante;
-	
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "estadoPPP")
-	@JsonIgnore
-	private Set<Carrera> carrera;
-	
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "estadoPPP")
-	@JsonIgnore
-	private Set<Documentacion> documentacion;
-	
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "estadoPPP")
-	@JsonIgnore
-	private Set<Persona> persona;
-	
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "estadoPPP")
-	@JsonIgnore
-	private Set<Plan> plan;
-	
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "estadoPPP")
-	@JsonIgnore
-	private Set<Rol> rol;
-	
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "estadoPPP")
-	@JsonIgnore
-	private Set<Supervisor> supervisor;
-	
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "estadoPPP")
-	@JsonIgnore
-	private Set<Usuario> usuario;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_estado")
+    private Long idEstado;
+
+    @Column(name = "estado")
+    private String estado;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "estado_ppp")
+    @JsonIgnore
+    private Set<Empresa> empresa;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "estado_ppp")
+    @JsonIgnore
+    private Set<Practica> practica;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "estado_ppp")
+    @JsonIgnore
+    private Set<Linea> linea;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "estado_ppp")
+    @JsonIgnore
+    private Set<RepresentanteLegal> representante_legal;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "estado_ppp")
+    @JsonIgnore
+    private Set<Practicante> practicante;
+
+    @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "estado_ppp")
+    @JsonIgnore
+    private Set<Carrera> carrera;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "estado_ppp")
+    @JsonIgnore
+    private Set<Documentacion> documentacion;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "estado_ppp")
+    @JsonIgnore
+    private Set<Persona> persona;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "estado_ppp")
+    @JsonIgnore
+    private Set<Plan> plan;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "estado_ppp")
+    @JsonIgnore
+    private Set<Rol> rol;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "estado_ppp")
+    @JsonIgnore
+    private Set<Usuario> usuario;
 }

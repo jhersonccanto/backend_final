@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.example.demo.dao.PlanCarreraDao;
-import com.example.demo.entity.Plan;
 import com.example.demo.entity.PlanCarrera;
 import com.example.demo.repository.PlanCarreraRepository;
 

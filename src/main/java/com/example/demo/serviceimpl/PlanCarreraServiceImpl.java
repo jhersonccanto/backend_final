@@ -15,7 +15,7 @@ public class PlanCarreraServiceImpl implements PlanCarreraService {
 
 	@Autowired
 	private PlanCarreraDao plancarreradao;
-	
+
 	@Override
 	public PlanCarrera create(PlanCarrera a) {
 		// TODO Auto-generated method stub
@@ -35,7 +35,7 @@ public class PlanCarreraServiceImpl implements PlanCarreraService {
 	}
 
 	@Override
-	public Optional<PlanCarrera>  read(Long id) {
+	public Optional<PlanCarrera> read(Long id) {
 		// TODO Auto-generated method stub
 		return plancarreradao.read(id);
 	}
@@ -45,6 +45,5 @@ public class PlanCarreraServiceImpl implements PlanCarreraService {
 		// TODO Auto-generated method stub
 		return plancarreradao.readAll();
 	}
-	
 
 }

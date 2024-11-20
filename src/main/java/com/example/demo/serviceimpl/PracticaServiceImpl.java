@@ -13,35 +13,35 @@ import com.example.demo.service.PracticaService;
 @Service
 public class PracticaServiceImpl  implements PracticaService {
 	@Autowired
-	private PracticaDao planpracticadao;
+	private PracticaDao practicadao;
 	
 	@Override
 	public Practica create(Practica a) {
 		// TODO Auto-generated method stub
-		return planpracticadao.create(a);
+		return practicadao.create(a);
 	}
 
 	@Override
 	public Practica update(Practica a) {
 		// TODO Auto-generated method stub
-		return planpracticadao.update(a);
+		return practicadao.update(a);
 	}
 
 	@Override
 	public void delete(Long id) {
 		// TODO Auto-generated method stub
-		planpracticadao.delete(id);
+		practicadao.delete(id);
 	}
 
 	@Override
 	public Optional<Practica> read(Long id) {
 		// TODO Auto-generated method stub
-		return planpracticadao.read(id);
+		return practicadao.read(id);
 	}
 
 	@Override
 	public List<Practica> readAll() {
 		// TODO Auto-generated method stub
-		return planpracticadao.readAll();
+		return practicadao.readAll();
 	}
 }

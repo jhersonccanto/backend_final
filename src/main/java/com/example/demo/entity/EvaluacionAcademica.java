@@ -22,30 +22,28 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity
-@Table(name="evaluacion_academica")
+@Table(name = "evaluacion_academica")
 public class EvaluacionAcademica {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	
-	@Column(name="id_evaluacion_academica")
-	private Long id_evaluacion;
-	
-	@Column(name="nombre")
-private String nombre;
-	
-	@Column(name="fecha_evaluacion")
-	@JsonFormat(pattern = "yyyy-MM-dd")
-private LocalDate fecha_evaluacion;
-	
-	@Column(name="calificacion")
-private Double calificacion;
-	
-	@Column(name="observaciones")
-private String observaciones;
-	
-	
-	
-	@ManyToOne
-	@JoinColumn(name = "id_practica", nullable = false)
-	private Practica practica;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_evaluacion_academica")
+    private Long idEvaluacionAcademica;
+
+    @Column(name = "nombre", nullable = false)
+    private String nombre;
+
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    @Column(name = "fecha_evaluacion", nullable = false)
+    private LocalDate fechaEvaluacion;
+
+    @Column(name = "calificacion", nullable = false)
+    private Double calificacion;
+
+    @Column(name = "observaciones")
+    private String observaciones;
+
+    @ManyToOne
+    @JoinColumn(name = "id_practica", nullable = false)
+    private Practica practica;
 }

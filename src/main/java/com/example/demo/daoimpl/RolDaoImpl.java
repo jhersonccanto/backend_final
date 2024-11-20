@@ -7,16 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.example.demo.dao.RolDao;
-import com.example.demo.entity.Plan;
 import com.example.demo.entity.Rol;
 import com.example.demo.repository.RolRepository;
 
 @Component
-public class RolDaoImpl implements RolDao{
+public class RolDaoImpl implements RolDao {
 
 	@Autowired
 	private RolRepository rolrepository;
-	
+
 	@Override
 	public Rol create(Rol a) {
 		// TODO Auto-generated method stub

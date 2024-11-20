@@ -25,35 +25,33 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity
-@Table(name="practicante")
+@Table(name = "practicante")
 public class Practicante {
-	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	
-	@Column(name="id_practicante")
-	private Long id_practicante;
-	
-	@Column(name="horas_acumuladas")
-private Number horas_acumuladas;
-	
-	@Column(name="horas_ps")
-private Number horas_ps;
-	
-	@ManyToOne
-	@JoinColumn(name = "id_plan_carrera", nullable = false)
-	private PlanCarrera plan_carrera;
-	
-	@ManyToOne
-	@JoinColumn(name = "id_estado", nullable = false)
-	private EstadoPPP estadoPPP;
-	
-	
-	@ManyToOne
-	@JoinColumn(name = "id_persona", nullable = false)
-	private Persona persona;
-	
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "practicante")
-	@JsonIgnore
-	private Set<Practica> practica;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_practicante")
+    private Long idPracticante;
+
+    @Column(name = "horas_acumuladas")
+    private Integer horasAcumuladas;
+
+    @Column(name = "horas_ps")
+    private Integer horasPs;
+
+    @ManyToOne
+    @JoinColumn(name = "id_plan_carrera", nullable = false)
+    private PlanCarrera plan_carrera;
+
+    @ManyToOne
+    @JoinColumn(name = "id_estado", nullable = false)
+    private EstadoPPP estado_ppp;
+
+    @ManyToOne
+    @JoinColumn(name = "id_persona", nullable = false)
+    private Persona persona;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "practicante")
+    @JsonIgnore
+    private Set<Practica> practica;
 }

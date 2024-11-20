@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.CarreraDao;
 import com.example.demo.entity.Carrera;
-import com.example.demo.entity.PlanCarrera;
 import com.example.demo.service.CarreraService;
 
 @Service

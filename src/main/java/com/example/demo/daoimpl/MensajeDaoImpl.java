@@ -8,15 +8,14 @@ import org.springframework.stereotype.Component;
 
 import com.example.demo.dao.MensajeDao;
 import com.example.demo.entity.Mensaje;
-import com.example.demo.entity.Plan;
 import com.example.demo.repository.MensajeRepository;
 
 @Component
-public class MensajeDaoImpl implements MensajeDao{
+public class MensajeDaoImpl implements MensajeDao {
 
 	@Autowired
 	private MensajeRepository mensajerepository;
-	
+
 	@Override
 	public Mensaje create(Mensaje a) {
 		// TODO Auto-generated method stub

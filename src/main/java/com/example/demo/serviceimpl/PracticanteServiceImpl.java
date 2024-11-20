@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.PracticanteDao;
-import com.example.demo.entity.PlanCarrera;
 import com.example.demo.entity.Practicante;
 import com.example.demo.service.PracticanteService;
 

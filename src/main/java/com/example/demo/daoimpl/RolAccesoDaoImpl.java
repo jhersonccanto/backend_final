@@ -7,16 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.example.demo.dao.RolAccesoDao;
-import com.example.demo.entity.Plan;
 import com.example.demo.entity.RolAcceso;
 import com.example.demo.repository.RolAccesoRepository;
 
 @Component
-public class RolAccesoDaoImpl implements RolAccesoDao{
+public class RolAccesoDaoImpl implements RolAccesoDao {
 
 	@Autowired
 	private RolAccesoRepository rolAccesorepository;
-	
+
 	@Override
 	public RolAcceso create(RolAcceso a) {
 		// TODO Auto-generated method stub

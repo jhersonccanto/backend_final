@@ -7,16 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.example.demo.dao.UsuarioDao;
-import com.example.demo.entity.Plan;
 import com.example.demo.entity.Usuario;
 import com.example.demo.repository.UsuarioRepository;
 
 @Component
-public class UsuarioDaoImpl implements UsuarioDao{
+public class UsuarioDaoImpl implements UsuarioDao {
 
 	@Autowired
 	private UsuarioRepository usuariorepository;
-	
+
 	@Override
 	public Usuario create(Usuario a) {
 		// TODO Auto-generated method stub
@@ -48,4 +47,3 @@ public class UsuarioDaoImpl implements UsuarioDao{
 	}
 
 }
-

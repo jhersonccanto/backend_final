@@ -8,15 +8,14 @@ import org.springframework.stereotype.Component;
 
 import com.example.demo.dao.LineaDao;
 import com.example.demo.entity.Linea;
-import com.example.demo.entity.Plan;
 import com.example.demo.repository.LineaRepository;
 
 @Component
-public class LineaDaoImpl implements LineaDao{
+public class LineaDaoImpl implements LineaDao {
 
 	@Autowired
 	private LineaRepository linearepository;
-	
+
 	@Override
 	public Linea create(Linea a) {
 		// TODO Auto-generated method stub

@@ -8,15 +8,14 @@ import org.springframework.stereotype.Component;
 
 import com.example.demo.dao.NotificacionesDao;
 import com.example.demo.entity.Notificaciones;
-import com.example.demo.entity.Plan;
 import com.example.demo.repository.NotificacionesRepository;
 
 @Component
-public class NotificacionesDaoImpl implements NotificacionesDao{
+public class NotificacionesDaoImpl implements NotificacionesDao {
 
 	@Autowired
 	private NotificacionesRepository notificacionesrepository;
-	
+
 	@Override
 	public Notificaciones create(Notificaciones a) {
 		// TODO Auto-generated method stub

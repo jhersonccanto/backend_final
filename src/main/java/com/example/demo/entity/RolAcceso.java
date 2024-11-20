@@ -18,22 +18,20 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity
-@Table(name="rol_acceso")
+@Table(name = "rol_acceso")
 public class RolAcceso {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	
-	@Column(name="id_rol_acceso")
-	private Long id_rol_acceso;
-	
-	
-	
-	@ManyToOne
-	@JoinColumn(name = "id_acceso", nullable = false)
-	private Acceso acceso;
 
-	@ManyToOne
-	@JoinColumn(name = "id_rol", nullable = false)
-	private Rol rol;
-	
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_rol_acceso")
+    private Long idRolAcceso;
+
+    @ManyToOne
+    @JoinColumn(name = "id_acceso", nullable = false)
+    private Acceso acceso;
+
+    @ManyToOne
+    @JoinColumn(name = "id_rol", nullable = false)
+    private Rol rol;
+
 }

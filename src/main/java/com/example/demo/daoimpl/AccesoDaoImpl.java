@@ -8,15 +8,14 @@ import org.springframework.stereotype.Component;
 
 import com.example.demo.dao.AccesoDao;
 import com.example.demo.entity.Acceso;
-import com.example.demo.entity.Plan;
 import com.example.demo.repository.AccesoRepository;
 
 @Component
-public class AccesoDaoImpl implements AccesoDao{
+public class AccesoDaoImpl implements AccesoDao {
 
 	@Autowired
 	private AccesoRepository accesorepository;
-	
+
 	@Override
 	public Acceso create(Acceso a) {
 		// TODO Auto-generated method stub

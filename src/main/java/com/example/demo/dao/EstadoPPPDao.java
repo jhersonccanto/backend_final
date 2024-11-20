@@ -5,7 +5,6 @@ import java.util.Optional;
 
 import com.example.demo.entity.EstadoPPP;
 
-
 public interface EstadoPPPDao {
 	EstadoPPP create(EstadoPPP a);
 	EstadoPPP update(EstadoPPP a);

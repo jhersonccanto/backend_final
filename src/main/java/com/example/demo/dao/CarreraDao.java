@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Optional;
 
 import com.example.demo.entity.Carrera;
-import com.example.demo.entity.PlanCarrera;
 
 public interface CarreraDao {
 	Carrera create(Carrera a);

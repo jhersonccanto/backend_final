@@ -15,34 +15,35 @@ import com.example.demo.service.MensajeService;
 @CrossOrigin(origins = "http://localhost:4200")
 public class MensajeController {
 
-    @Autowired
-    private MensajeService service;
+	@Autowired
+	private MensajeService service;
 
-    @GetMapping
-    public ResponseEntity<List<Mensaje>> readAll() {
-        List<Mensaje> lista = service.readAll();
-        return lista.isEmpty() ? new ResponseEntity<>(null, HttpStatus.NO_CONTENT) : new ResponseEntity<>(lista, HttpStatus.OK);
-    }
+	@GetMapping
+	public ResponseEntity<List<Mensaje>> readAll() {
+		List<Mensaje> lista = service.readAll();
+		return lista.isEmpty() ? new ResponseEntity<>(null, HttpStatus.NO_CONTENT)
+				: new ResponseEntity<>(lista, HttpStatus.OK);
+	}
 
-    @PostMapping
-    public ResponseEntity<Mensaje> create(@Valid @RequestBody Mensaje obj) {
-        return new ResponseEntity<>(service.create(obj), HttpStatus.CREATED);
-    }
+	@PostMapping
+	public ResponseEntity<Mensaje> create(@Valid @RequestBody Mensaje obj) {
+		return new ResponseEntity<>(service.create(obj), HttpStatus.CREATED);
+	}
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Mensaje> read(@PathVariable Long id) {
-        return service.read(id).map(ResponseEntity::ok).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
-    }
+	@GetMapping("/{id}")
+	public ResponseEntity<Mensaje> read(@PathVariable Long id) {
+		return service.read(id).map(ResponseEntity::ok).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+	}
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Mensaje> update(@PathVariable Long id, @Valid @RequestBody Mensaje obj) {
-        return service.read(id).map(existing -> new ResponseEntity<>(service.update(obj), HttpStatus.OK))
-                               .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
-    }
+	@PutMapping("/{id}")
+	public ResponseEntity<Mensaje> update(@PathVariable Long id, @Valid @RequestBody Mensaje obj) {
+		return service.read(id).map(existing -> new ResponseEntity<>(service.update(obj), HttpStatus.OK))
+				.orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+	}
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id) {
-        service.delete(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-    }
+	@DeleteMapping("/{id}")
+	public ResponseEntity<Void> delete(@PathVariable Long id) {
+		service.delete(id);
+		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	}
 }

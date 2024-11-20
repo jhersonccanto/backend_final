@@ -11,11 +11,11 @@ import com.example.demo.entity.Plan;
 import com.example.demo.repository.PlanRepository;
 
 @Component
-public class PlanDaoImpl implements PlanDao{
+public class PlanDaoImpl implements PlanDao {
 
 	@Autowired
 	private PlanRepository planrepository;
-	
+
 	@Override
 	public Plan create(Plan a) {
 		// TODO Auto-generated method stub

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.entity.Ubigeo;
 
 @Repository
-public interface UbigeoRepository extends JpaRepository<Ubigeo, Long> {
+public interface UbigeoRepository extends JpaRepository<Ubigeo, Long>{
 
 }

@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 
 import com.example.demo.dao.EstadoPPPDao;
 import com.example.demo.entity.EstadoPPP;
-import com.example.demo.entity.Plan;
 import com.example.demo.repository.EstadoPPPRepository;
 
 @Component

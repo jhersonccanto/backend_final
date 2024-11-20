@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.RolDao;
-import com.example.demo.entity.Plan;
 import com.example.demo.entity.Rol;
 import com.example.demo.service.RolService;
 

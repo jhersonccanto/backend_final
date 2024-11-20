@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.EvaluacionAcademicaDao;
 import com.example.demo.entity.EvaluacionAcademica;
-import com.example.demo.entity.PlanCarrera;
 import com.example.demo.service.EvaluacionAcademicaService;
 
 @Service

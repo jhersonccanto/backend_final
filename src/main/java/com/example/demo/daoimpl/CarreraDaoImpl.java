@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 
 import com.example.demo.dao.CarreraDao;
 import com.example.demo.entity.Carrera;
-import com.example.demo.entity.Plan;
 import com.example.demo.repository.CarreraRepository;
 
 @Component

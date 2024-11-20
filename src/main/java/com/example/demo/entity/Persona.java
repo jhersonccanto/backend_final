@@ -25,49 +25,49 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity
-@Table(name="persona")
+@Table(name = "persona")
 public class Persona {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	
-	@Column(name="id_persona")
-	private Long id_persona;
-	
-	@Column(name="nombre")
-private String nombre;
-	
-	@Column(name="apellido")
-private String apellido;
-	
-	@Column(name="email")
-private String email;
-	
-	@Column(name="telefono")
-private String telefono;
-	
-	@Column(name="codigo")
-private String codigo;
-	
-	@Column(name="dni")
-	private String dni;
-	
-	@ManyToOne
-	@JoinColumn(name = "id_estado", nullable = false)
-	private EstadoPPP estadoPPP;
-	
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "persona")
-	@JsonIgnore
-	private Set<Usuario> usuario;
-	
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "persona")
-	@JsonIgnore
-	private Set<Practicante> practicante;
-	
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "persona")
-	@JsonIgnore
-	private Set<RepresentanteLegal> representante_legal;
-	
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "persona")
-	@JsonIgnore
-	private Set<Supervisor> supervisor;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_persona")
+    private Long idPersona;
+
+    @Column(name = "nombre", nullable = false)
+    private String nombre;
+
+    @Column(name = "apellido", nullable = false)
+    private String apellido;
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "telefono")
+    private String telefono;
+
+    @Column(name = "codigo")
+    private String codigo;
+
+    @Column(name = "dni", nullable = false, length = 8)
+    private String dni;
+
+    @ManyToOne
+    @JoinColumn(name = "id_estado", nullable = false)
+    private EstadoPPP estado_ppp;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "persona")
+    @JsonIgnore
+    private Set<Usuario> usuario;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "persona")
+    @JsonIgnore
+    private Set<Practicante> practicante;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "persona")
+    @JsonIgnore
+    private Set<RepresentanteLegal> representante_legal;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "persona")
+    @JsonIgnore
+    private Set<Supervisor> supervisor;
 }

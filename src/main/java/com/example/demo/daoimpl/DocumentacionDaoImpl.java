@@ -8,15 +8,14 @@ import org.springframework.stereotype.Component;
 
 import com.example.demo.dao.DocumentacionDao;
 import com.example.demo.entity.Documentacion;
-import com.example.demo.entity.Plan;
 import com.example.demo.repository.DocumentacionRepository;
 
 @Component
-public class DocumentacionDaoImpl implements DocumentacionDao{
+public class DocumentacionDaoImpl implements DocumentacionDao {
 
 	@Autowired
 	private DocumentacionRepository documentacionrepository;
-	
+
 	@Override
 	public Documentacion create(Documentacion a) {
 		// TODO Auto-generated method stub

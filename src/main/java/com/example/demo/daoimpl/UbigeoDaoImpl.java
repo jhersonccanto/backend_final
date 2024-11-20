@@ -7,16 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.example.demo.dao.UbigeoDao;
-import com.example.demo.entity.Plan;
 import com.example.demo.entity.Ubigeo;
 import com.example.demo.repository.UbigeoRepository;
 
 @Component
-public class UbigeoDaoImpl implements UbigeoDao{
+public class UbigeoDaoImpl implements UbigeoDao {
 
 	@Autowired
 	private UbigeoRepository ubigeorepository;
-	
+
 	@Override
 	public Ubigeo create(Ubigeo a) {
 		// TODO Auto-generated method stub

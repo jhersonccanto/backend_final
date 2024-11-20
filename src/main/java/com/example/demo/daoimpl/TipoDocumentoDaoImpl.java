@@ -7,16 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.example.demo.dao.TipoDocumentoDao;
-import com.example.demo.entity.Plan;
 import com.example.demo.entity.TipoDocumento;
 import com.example.demo.repository.TipoDocumentoRepository;
 
 @Component
-public class TipoDocumentoDaoImpl implements TipoDocumentoDao{
+public class TipoDocumentoDaoImpl implements TipoDocumentoDao {
 
 	@Autowired
 	private TipoDocumentoRepository tipodocumentorepository;
-	
+
 	@Override
 	public TipoDocumento create(TipoDocumento a) {
 		// TODO Auto-generated method stub

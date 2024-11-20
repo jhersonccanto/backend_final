@@ -25,26 +25,25 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity
-@Table(name="mensaje")
+@Table(name = "mensaje")
 public class Mensaje {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	
-	@Column(name="id_mensaje")
-	private Long id_mensaje;
-	
-	@Column(name="mensaje_emisor")
-private String mensaje_emisor;
-	
-	@Column(name="mensaje_receptor")
-private String mensaje_receptor;
-	
-	@ManyToOne
-	@JoinColumn(name = "id_tipo_documento", nullable = false)
-	private TipoDocumento tipo_documento;
-	
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "mensaje")
-	@JsonIgnore
-	private Set<Notificaciones> notificaciones;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_mensaje")
+    private Long idMensaje;
+
+    @Column(name = "mensaje_emisor", nullable = false)
+    private String mensajeEmisor;
+
+    @Column(name = "mensaje_receptor", nullable = false)
+    private String mensajeReceptor;
+
+    @ManyToOne
+    @JoinColumn(name = "id_tipo_documento", nullable = false)
+    private TipoDocumento tipo_documento;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "mensaje")
+    @JsonIgnore
+    private Set<Notificaciones> notificaciones;
 }

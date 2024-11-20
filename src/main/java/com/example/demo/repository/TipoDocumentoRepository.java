@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.entity.TipoDocumento;
 
 @Repository
-public interface TipoDocumentoRepository extends JpaRepository<TipoDocumento, Long>{
+public interface TipoDocumentoRepository extends JpaRepository<TipoDocumento, Long> {
 
 }
