@@ -45,6 +45,7 @@ public class Practicante {
 
     @ManyToOne
     @JoinColumn(name = "id_estado", nullable = false)
+    
     private EstadoPPP estado_ppp;
 
     @ManyToOne

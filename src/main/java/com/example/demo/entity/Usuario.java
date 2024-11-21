@@ -3,6 +3,8 @@ package com.example.demo.entity;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -46,15 +48,19 @@ public class Usuario {
 
     @ManyToOne
     @JoinColumn(name = "id_estado", nullable = false)
+    
     private EstadoPPP estado_ppp;
 
     @OneToMany(mappedBy = "usuario_recibe", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore
     private Set<Notificaciones> notificaciones_recibe = new HashSet<>();
 	
 	@OneToMany(mappedBy = "usuario_envia", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JsonIgnore
     private Set<Notificaciones> notificaciones_envia = new HashSet<>();
 	
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+	@JsonIgnore
 	@JoinTable(
 			name="usuario_rol",
 			joinColumns = @JoinColumn(name="id_usuario", referencedColumnName = "id_usuario"),

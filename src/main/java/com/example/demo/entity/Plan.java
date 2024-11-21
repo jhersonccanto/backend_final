@@ -38,6 +38,7 @@ public class Plan {
 
     @ManyToOne
     @JoinColumn(name = "id_estado", nullable = false)
+   
     private EstadoPPP estado_ppp;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "plan")

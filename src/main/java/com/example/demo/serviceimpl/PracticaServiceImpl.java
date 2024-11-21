@@ -6,14 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.PracticaDao;
-
 import com.example.demo.entity.Practica;
 import com.example.demo.service.PracticaService;
 
 @Service
 public class PracticaServiceImpl  implements PracticaService {
+	
 	@Autowired
 	private PracticaDao practicadao;
+	
 	
 	@Override
 	public Practica create(Practica a) {

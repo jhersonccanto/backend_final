@@ -40,6 +40,7 @@ public class Rol {
     
     @ManyToOne
     @JoinColumn(name = "id_estado", nullable = false)
+    
     private EstadoPPP estado_ppp;
 
     @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "rol")
@@ -55,6 +56,7 @@ public class Rol {
     private Set<TipoDocumento> documento_receptor = new HashSet<>();
 
 	@ManyToMany(mappedBy = "rol")
+	@JsonIgnore
 	private Set<Usuario> usuario = new HashSet<>();
 
     

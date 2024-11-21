@@ -45,5 +45,6 @@ public class EvaluacionAcademica {
 
     @ManyToOne
     @JoinColumn(name = "id_practica", nullable = false)
+    
     private Practica practica;
 }

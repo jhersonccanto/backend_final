@@ -43,21 +43,24 @@ public class TipoDocumento {
 
     @ManyToOne
     @JoinColumn(name = "id_rol_emisor", referencedColumnName = "id_rol", nullable = false)
+    
     private Rol rol_emisor;
 
     @ManyToOne
     @JoinColumn(name = "id_rol_receptor", referencedColumnName = "id_rol", nullable = false)
+    
     private Rol rol_receptor;
 
     @ManyToMany(mappedBy = "tipo_documento")
+    @JsonIgnore
     private Set<PlanCarrera> plan_carrera = new HashSet<>();
 
     @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "tipo_documento")
-	@JsonIgnore
+    @JsonIgnore
 	private Set<Documentacion> documentacion;
     
     @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "tipo_documento")
-	@JsonIgnore
+    @JsonIgnore
 	private Set<Mensaje> mensaje;
 
 }

@@ -16,4 +16,5 @@ public interface PracticaService {
 	Optional<Practica> read(Long id);
 
 	List<Practica> readAll();
+	
 }

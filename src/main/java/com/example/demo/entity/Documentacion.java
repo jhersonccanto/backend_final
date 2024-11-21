@@ -44,13 +44,16 @@ public class Documentacion {
 
     @ManyToOne
     @JoinColumn(name = "id_estado", nullable = false)
+
     private EstadoPPP estado_ppp;
 
     @ManyToOne
     @JoinColumn(name = "id_practica", nullable = false)
+    
     private Practica practica;
 
     @ManyToOne
     @JoinColumn(name = "id_tipo_documento", nullable = false)
+    
     private TipoDocumento tipo_documento;
 }

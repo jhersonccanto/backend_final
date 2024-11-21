@@ -30,38 +30,33 @@ import lombok.Setter;
 @Table(name = "plan_carrera")
 public class PlanCarrera {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_plan_carrera")
-    private Long idPlanCarrera;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_plan_carrera")
+	private Long idPlanCarrera;
 
-    @Column(name = "horas")
-    private Integer horas;
+	@Column(name = "horas")
+	private Integer horas;
 
-    @ManyToOne
-    @JoinColumn(name = "id_plan", nullable = false)
-    private Plan plan;
+	@ManyToOne
+	@JoinColumn(name = "id_plan", nullable = false)
+	private Plan plan;
 
-    @ManyToOne
-    @JoinColumn(name = "id_carrera", nullable = false)
-    private Carrera carrera;
+	@ManyToOne
+	@JoinColumn(name = "id_carrera", nullable = false)
+	private Carrera carrera;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "plan_carrera")
-    @JsonIgnore
-    private Set<Practicante> practicante;
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "plan_carrera")
+	@JsonIgnore
+	private Set<Practicante> practicante;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "plan_carrera")
-    @JsonIgnore
-    private Set<Practica> practica;
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "plan_carrera")
+	@JsonIgnore
+	private Set<Practica> practica;
 
-
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
-    @JoinTable(
-            name = "documentos_plan",
-            joinColumns = @JoinColumn(name = "id_plan_carrera", referencedColumnName = "id_plan_carrera"),
-            inverseJoinColumns = @JoinColumn(name = "id_tipo_documento", referencedColumnName = "id_tipo_documento")
-    )
-    private Set<TipoDocumento> tipo_documento;
-
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+	@JsonIgnore
+	@JoinTable(name = "documentos_plan", joinColumns = @JoinColumn(name = "id_plan_carrera", referencedColumnName = "id_plan_carrera"), inverseJoinColumns = @JoinColumn(name = "id_tipo_documento", referencedColumnName = "id_tipo_documento"))
+	private Set<TipoDocumento> tipo_documento;
 
 }

@@ -38,7 +38,7 @@ public class EstadoPPP {
     @JsonIgnore
     private Set<Empresa> empresa;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "estado_ppp")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "estadoPPP")
     @JsonIgnore
     private Set<Practica> practica;
 

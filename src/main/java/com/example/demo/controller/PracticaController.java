@@ -16,20 +16,8 @@ import com.example.demo.service.PracticaService;
 @CrossOrigin(origins = "http://localhost:4200")
 public class PracticaController {
 
-    @Autowired
-    private PracticaService service;
-
-    /*private final PlanPracticaRepository practicaRepository;
-
-    public PracticaController(PlanPracticaRepository practicaRepository) {
-        this.practicaRepository = practicaRepository;
-    }
-
-    @GetMapping
-    public ResponseEntity<List<SolicitudDTO>> getSolicitudes() {
-        List<SolicitudDTO> solicitudes = practicaRepository.findAllSolicitudes();
-        return solicitudes.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(solicitudes);
-    }*/
+	@Autowired
+    private PracticaService service; 
     
     @GetMapping
     public ResponseEntity<List<Practica>> readAll() {

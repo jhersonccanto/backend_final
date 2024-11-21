@@ -57,26 +57,32 @@ public class Practica {
 
     @ManyToOne
     @JoinColumn(name = "id_linea", nullable = false)
+    
     private Linea linea;
 
     @ManyToOne
     @JoinColumn(name = "id_supervisor", nullable = false)
+    
     private Supervisor supervisor;
 
     @ManyToOne
     @JoinColumn(name = "id_estado", nullable = false)
-    private EstadoPPP estado_ppp;
+    
+    private EstadoPPP estadoPPP;
 
     @ManyToOne
     @JoinColumn(name = "id_plan_carrera", nullable = false)
+    
     private PlanCarrera plan_carrera;
 
     @ManyToOne
     @JoinColumn(name = "id_practicante", nullable = false)
+    
     private Practicante practicante;
 
     @ManyToOne
     @JoinColumn(name = "id_empresa", nullable = false)
+    
     private Empresa empresa;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "practica")

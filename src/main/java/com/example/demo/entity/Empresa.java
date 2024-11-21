@@ -49,10 +49,11 @@ public class Empresa {
 
     @ManyToOne
     @JoinColumn(name = "id_representante", nullable = false)
-    private RepresentanteLegal representante_legal;
+    private RepresentanteLegal representanteLegal;
 
     @ManyToOne
     @JoinColumn(name = "id_estado", nullable = false)
+    
     private EstadoPPP estado_ppp;
 
     @ManyToOne
